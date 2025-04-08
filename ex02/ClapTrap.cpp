@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "toto has been created !" << std::endl;
+	std::cout << "ClapTrap toto has been created !" << std::endl;
 	this->_name = "toto";
 	this->_hit = 10;
 	this->_energy = 10;
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << name << " has been created !" << std::endl;
+	std::cout << "ClapTrap " << name << " has been created !" << std::endl;
 	this->_name = name;
 	this->_hit = 10;
 	this->_energy = 10;
@@ -32,12 +32,13 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
 {
+	std::cout << "ClapTrap constructor copy called !" << std::endl;
 	*this = obj;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap destroyed !" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " has been destroyed !" << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& obj)
@@ -66,12 +67,12 @@ void	ClapTrap::attack(const std::string& target)
 			<< std::endl;
 	}
 	else
-		std::cout << "ClapTrap" << this->_name << " has not enough hit points to attack." << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has not enough hit points to attack." << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap "<< this->_name << " takes " << amount << " points of damage." << std::endl;
+	std::cout << "ClapTrap " << this->_name << " takes " << amount << " points of damage." << std::endl;
 	this->_hit -= amount;
 }
 
@@ -79,7 +80,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_energy > 0 || this->_hit > 0)
 	{
-		std::cout << "ClapTrap "<< this->_name << " has been repaired of " << amount
+		std::cout << "ClapTrap " << this->_name << " has been repaired of " << amount
 			<< " points" << std::endl;
 	}
 	else if (this->_energy == 0)

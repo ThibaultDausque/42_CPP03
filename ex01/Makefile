@@ -11,14 +11,15 @@
 # **************************************************************************** #
 
 CC = g++
-SRCS = ClapTrap.cpp\
+SRCS = ClapTrap.cpp \
+	ScavTrap.cpp \
 	main.cpp
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 OBJS_DIR = objs
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 all: $(NAME)
 
