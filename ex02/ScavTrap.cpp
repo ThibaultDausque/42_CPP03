@@ -43,6 +43,18 @@ ScavTrap&	ScavTrap::operator=(const	ScavTrap& obj)
 
 void	ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << this->_name << " is now in guard mode." << std::endl;
+	std::cout << this->_name << " is now in guard mode." << std::endl;
 }
 
+void	ScavTrap::attack(const std::string& target)
+{
+	if (this->_hit > 0 && this->_energy > 0)
+	{
+		std::cout << this->_name << " use an inherit attack on " << target << std::endl;
+		this->_energy--;
+	}
+	else if (this->_hit <= 0)
+		std::cout << this->_name << " has not enough hit points to attack." << std::endl;
+	else if (this->_energy <= 0)
+		std::cout << this->_name << " has not enough energy points to attack." << std::endl;
+}

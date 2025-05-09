@@ -20,7 +20,7 @@ RM = rm -f
 OBJS_DIR = objs
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
-NAME = ScavTrap
+NAME = FragTrap
 
 all: $(NAME)
 

@@ -54,14 +54,15 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& obj)
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if (this->_energy > 0 && this->_hit > 0)
+	if (this->_hit > 0 && this->_energy > 0)
 	{
-		std::cout << this->_name << " attacks " << target
-			<< ", causing " << this->_damage << " points of damage!" << std::endl;
+		std::cout << this->_name << " use an inherit attack on " << target << std::endl;
 		this->_energy--;
 	}
-	else
+	else if (this->_hit <= 0)
 		std::cout << this->_name << " has not enough hit points to attack." << std::endl;
+	else if (this->_energy <= 0)
+		std::cout << this->_name << " has not enough energy points to attack." << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -78,8 +79,10 @@ void	ClapTrap::beRepaired(unsigned int amount)
 			<< " points" << std::endl;
 		this->_energy--;
 	}
-	else
+	else if (this->_hit <= 0)
 		std::cout << this->_name << " has not enough hit points to recover." << std::endl;
+	else if (this->_energy <= 0)
+		std::cout << this->_name << " has not enough energy points to recover." << std::endl;
 }
 
 
