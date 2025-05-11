@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tdausque <tdausque@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/04 21:14:44 by tdausque          #+#    #+#             */
-/*   Updated: 2025/04/04 21:23:05 by tdausque         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
@@ -56,7 +44,7 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (this->_hit > 0 && this->_energy > 0)
 	{
-		std::cout << this->_name << " use an inherit attack on " << target << std::endl;
+		std::cout << this->_name << " use an attack on " << target << std::endl;
 		this->_energy--;
 	}
 	else if (this->_hit <= 0)
@@ -78,6 +66,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << this->_name << " has been repaired of " << amount
 			<< " points" << std::endl;
 		this->_energy--;
+		this->_hit += amount;
 	}
 	else if (this->_hit <= 0)
 		std::cout << this->_name << " has not enough hit points to recover." << std::endl;

@@ -67,6 +67,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap "<< this->_name << " has been repaired of " << amount
 			<< " points" << std::endl;
 		this->_energy--;
+		this->_hit += amount;
 	}
 	else if (this->_hit <= 0)
 		std::cout << "ClapTrap " << this->_name << " has not enough hit points to recover." << std::endl;
