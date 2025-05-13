@@ -2,13 +2,14 @@ CC = c++
 SRCS = ClapTrap.cpp \
 	ScavTrap.cpp \
 	FragTrap.cpp \
+	DiamondTrap.cpp \
 	main.cpp
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 OBJS_DIR = objs
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
-NAME = FragTrap
+NAME = DiamondTrap
 
 all: $(NAME)
 
